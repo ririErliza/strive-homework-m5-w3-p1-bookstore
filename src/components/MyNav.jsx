@@ -19,7 +19,7 @@ class MyNav extends Component{
         <Nav>
             <input type="text" placeholder="Search title..." className="w-75" 
               value={this.props.searchQuery}
-              onChange={e => this.props.changeAppState( e.target.value)}
+              onChange={e => this.props.changeAppState(e.target.value)}
              />
         </Nav>
         

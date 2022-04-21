@@ -8,6 +8,7 @@ import CommentArea from './CommentArea'
 class SingleBook extends Component{
     state = {
         display: false,
+        selected: false,
         
       }
  
@@ -25,7 +26,9 @@ class SingleBook extends Component{
                         <Card.Title className="text-truncate">{this.props.book.title}</Card.Title> 
                     </Card.Body>
                    
-                    <CommentArea asin={this.props.book.asin}/>
+                    {
+                    this.state.selected && <CommentArea asin={this.props.book.asin}/>
+                    }
                 </Card>
             </Col>
             
