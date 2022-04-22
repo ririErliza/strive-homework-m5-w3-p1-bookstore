@@ -5,12 +5,12 @@ import SingleBook from "./SingleBook";
 class BookList extends Component {
       state = {
         // display: false,
-        selected: undefined,
+        selected: null,
         
       }
-      changeBookState=()=>{
+      changeBookState=(asin)=>{
           this.setState({
-              selected:this.props.asin,
+              selected:asin,
             //   display:true,
           })
       }
@@ -25,7 +25,7 @@ class BookList extends Component {
                         .map(book=>(<SingleBook
                             
                             selected={this.state.selected} 
-                            changeBookState ={this.changeBookState}
+                            changeBookState ={(AsinFromSingleBook)=>this.changeBookState(AsinFromSingleBook)}
                             key={book.asin} book={book}/> 
                         ))}
                     </Row>

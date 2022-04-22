@@ -24,7 +24,7 @@ class SingleBook extends Component{
                             // onClick={() => this.props.changeBookState({display: !this.props.display})}
                     />
 
-                    <Card.Body onClick={() => this.props.changeBookState({selected: !this.props.selected})}>
+                    <Card.Body onClick={() => this.props.changeBookState(this.props.book.asin)}>
                         <Card.Title className="text-truncate">{this.props.book.title}</Card.Title> 
                     </Card.Body>
                    
