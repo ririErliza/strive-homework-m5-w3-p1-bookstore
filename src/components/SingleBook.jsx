@@ -6,28 +6,30 @@ import CommentArea from './CommentArea'
 
 
 class SingleBook extends Component{
-    state = {
-        display: false,
-        selected: false,
+    // state = {
+    //     display: false,
+    //     selected: false,
         
-      }
+    //   }
  
     render(){
         return(
             <Col xs={6} md={3} className="mb-3">
                 <Card
                     key={this.props.book.asin}
-                    className={ this.state.display ? "BorderOn" : "BorderOff" }
+                    // className={ this.props.display ? "BorderOn" : "BorderOff" }
             >
 
                     <Card.Img variant="top" src={this.props.book.img} className="imageBook"
-                            onClick={() => this.setState({display: !this.state.display})}/>
-                    <Card.Body onClick={() => this.setState({selected: !this.state.selected})}>
+                            // onClick={() => this.props.changeBookState({display: !this.props.display})}
+                    />
+
+                    <Card.Body onClick={() => this.props.changeBookState({selected: !this.props.selected})}>
                         <Card.Title className="text-truncate">{this.props.book.title}</Card.Title> 
                     </Card.Body>
                    
                     {
-                    this.state.selected && <CommentArea asin={this.props.book.asin}/>
+                    this.props.selected && <CommentArea asin={this.props.book.asin}/>
                     }
                 </Card>
             </Col>
